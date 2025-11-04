@@ -7,45 +7,54 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="controls-bar">
+    <div id="live-datetime"></div>
+    <button id="theme-toggle">🌙 Dark Mode</button>
+  </div>
+
   <header class="header">
     <h1>About Me</h1>
     <p>Personal profile and background</p>
   </header>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="journal.html">Journal</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a class="active" href="about.html">About</a></li>
-    </ul>
-  </nav>
+  <!-- Navigation will be inserted here by JavaScript -->
 
   <div class="row">
     <aside class="side">
       <h2>Profile</h2>
       
       <p><strong>Name:</strong>Anjali</p>
-      <p><strong>Course:</strong> Mobile Application Development</p>
-      <p><strong>Institution:</strong> University for the Creative Arts, UK</p>
+        <p><strong>Course:</strong> Mobile Application Development</p>
+        <p><strong>Institution:</strong> University for the Creative Arts, UK</p>
+      </div>
     </aside>
 
     <main class="main">
+      <button id="like-btn" class="like-button">👍 Like</button>
+
+      
       <h2>About My Journey</h2>
-      <p>I am a passionate learner exploring the world of 
-        creative computing and mobile application development.</p>
+        <p>I am a passionate learner exploring the world of 
+          creative computing and mobile application development.</p>
+      </div>
 
       <h3>My Interests</h3>
-      <ul>
-        <li>Web and Mobile App Design</li>
-        <li>Creative UI/UX Development</li>
-      </ul>
+        <ul>
+          <li>Web and Mobile App Design</li>
+          <li>Creative UI/UX Development</li>
+          <li>Interactive User Experiences</li>
+          <li>Responsive Web Design</li>
+        </ul>
+      </div>
 
       <h3>Goals</h3>
-      <p>Through this unit, I aim to build a strong 
-        foundation in HTML, CSS, and responsive design.</p>
+        <p>Through this unit, I aim to build a strong 
+          foundation in HTML, CSS, and responsive design.</p>
+        <p>I'm particularly interested in creating accessible and user-friendly web applications that work seamlessly across different devices and platforms.</p>
+      </div>
     </main>
   </div>
 
+  <script src="js/scripts.js"></script>
 </body>
 </html>
