@@ -9,31 +9,74 @@
 <body>
   <div class="controls-bar">
     <div id="live-datetime"></div>
-    <button id="theme-toggle">🌙 Dark Mode</button>
+    <button id="theme-toggle">Dark Mode</button>
   </div>
 
   <header class="header">
-    <h1>Weekly Journal</h1>
-    <p>Reflections and progress updates</p>
+    <h1>Reflective Journal</h1>
+    <p>Share your learning reflections and progress</p>
   </header>
 
+
   <main class="content">
-    <section>
-      <h2>Week 1 Entry</h2>
-      <p><strong>How did you approach mobile-first design?</strong><br>
-      I started by designing for small screens using 
-      flexible layouts and percentages, 
-      then added media queries for larger devices.</p>
+    <p id="todayDate" style="text-align: center; font-size: 18px; font-weight: bold; color: palevioletred; margin-bottom: 20px;"></p>
+    
+    <div class="journal-form">
+      <h2>Add New Reflection</h2>
+      <form name="journalForm" onsubmit="return handleJournalSubmit(event)" novalidate>
+        <label for="fname">Name: <span style="color: red;">*</span></label><br>
+        <input type="text" id="fname" name="fname" size="53" required 
+               placeholder="Enter your full name"
+               title="Please enter your name (required)"><br><br>
+        
+        <label for="reflection">Reflection: <span style="color: red;">*</span></label><br>
+        <textarea id="reflection" name="reflection" minlength="10" maxlength="1000"
+          placeholder="What did you learn this week? What did you find challenging? (minimum 10 characters)" 
+          rows="4" cols="50" required 
+          title="Write your reflection (10-1000 characters)"></textarea><br>
+        <br>
+        
+        <input type="submit" value="Submit Reflection">
+        <input type="reset" value="Reset Form">
+        <input type="button" value="Clear All Entries" onclick="clearAllEntries()">
+      </form>
+      
+      <div id="form-validation-messages" style="margin-top: 10px; color: #ff6b6b; font-size: 14px;"></div>
+    </div>
 
-      <p><strong>Most useful concept?</strong><br>
-      Learning how Flexbox simplifies layout control and 
-      responsive design.</p>
-
-      <p><strong>Most challenging part?</strong><br>
-      Understanding the CSS box model and how padding and margins affect total width.</p>
+    <section style="margin: 30px 0; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+      <h2>Educational Content</h2>
+      <p>Watch this educational video about web development to enhance your learning:</p>
+      
+      <div id="youtube-player" style="margin: 15px 0;"></div>
+      
+      <div style="margin-top: 15px;">
+        <button id="play-btn" onclick="playVideo()" title="Play video">Play</button>
+        <button id="pause-btn" onclick="pauseVideo()" title="Pause video">Pause</button>
+        
+      </div>
+      
     </section>
+
+    <section style="margin: 20px 0;">
+      <h2>Previous Reflections</h2>
+      <div id="viewAllEntries" style="min-height: 60px;"></div>
+      
+    </section>
+
+   
+
   </main>
 
+
   <script src="js/scripts.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/browser.js"></script>
+  <script src="js/thirdparty.js"></script>
+  
+
+
+   <script src="https://www.youtube.com/iframe_api"></script>
+
 </body>
 </html>
