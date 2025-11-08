@@ -1,5 +1,3 @@
-
-
 function checkReflection() {
     let reflection = document.forms["journalForm"]["reflection"];
     let name = document.forms["journalForm"]["fname"];
@@ -15,13 +13,14 @@ function checkReflection() {
     return true;
 }
 
-function handleJournalSubmit(event) {
+async function handleJournalSubmit(event) {
     event.preventDefault();
     if (checkReflection()) {
-        alert("Entry saved successfully!");
-        saveJournalEntry();
-        document.forms["journalForm"].reset();
-        getDate();
+        const success = await saveJournalEntry();
+        if (success) {
+            document.forms["journalForm"].reset();
+            getDate();
+        }
     }
     return false;
 }
